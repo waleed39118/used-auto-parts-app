@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Available Spare Parts</h1>
+
+    <% if (success && success.length) { %>
+      <div class="alert alert-success">
+        <%= success %>
+      </div>
+      <% } %>
+        <% if (error && error.length) { %>
+          <div class="alert alert-danger">
+            <%= error %>
+          </div>
+          <% } %>
+
+            <% if (parts.length===0) { %>
+              <p class="text-center">No spare parts listed yet.</p>
+              <% } %>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                  <% parts.forEach(part=> { %>
+                    <div class="col">
+                      <div class="card h-100 shadow-sm border-0">
+                        <% if (part.photos && part.photos.length) { %>
+                          <img src="/<%= part.photos[0] %>" class="card-img-top" alt="<%= part.title %>"
+                            style="height:200px; object-fit:cover;">
+                          <% } else { %>
+                            <img src="https://via.placeholder.com/400x200?text=No+Image" class="card-img-top"
+                              alt="No image available" style="height:200px; object-fit:cover;">
+                            <% } %>
+                              <div class="card-body">
+                                <h5 class="card-title">
+                                  <%= part.title %>
+                                </h5>
+                                <p class="card-text">
+                                  <%= part.description %>
+                                </p>
+                                <p class="fw-bold text-primary">$<%= part.price %>
+                                </p>
+                              </div>
+                              <div class="card-footer bg-white border-0">
+                                <small class="text-muted">Contact: <%= part.phone %></small><br>
+                                <% if (part.owner && part.owner.username) { %>
+                                  <small class="text-muted">Posted by: <%= part.owner.username %></small>
+                                  <% } %>
+                              </div>
+                      </div>
+                    </div>
+                    <% }) %>
+                </div>
+  </div>
+
+  <%- include('partials/footer') %>

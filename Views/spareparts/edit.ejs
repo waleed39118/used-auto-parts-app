@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+  <h1 class="mb-4">Edit <%= part.name %>
+  </h1>
+  <form action="/spareparts/<%= part._id %>?_method=PUT" method="POST" class="card p-4 shadow-sm">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" name="name" value="<%= part.name %>" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" name="price" value="<%= part.price %>" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea name="description" class="form-control" rows="3"><%= part.description %></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Spare Part</button>
+  </form>
+
+  <%- include('../partials/footer') %>

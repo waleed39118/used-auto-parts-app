@@ -1,0 +1,112 @@
+/* Base styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #f9f9f9, #eef1f5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+}
+
+.navbar-brand, .nav-link, .navbar-text {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+/* Flash messages */
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.alert-error, .alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Cards for spare parts */
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #555;
+}
+
+/* Price badge */
+.price-badge {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  background: #007bff;
+  color: #fff;
+  padding: 1rem 0;
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0062cc, #0086cc);
+}
+
+/* Form inputs */
+form input, form textarea, form select {
+  border-radius: 0.5rem;
+}
+
+/* Upload input */
+.custom-file-input ~ .custom-file-label::after {
+  content: "Browse";
+}
+
+/* Center page titles */
+h1, h2, h3 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 150px;
+  }
+}

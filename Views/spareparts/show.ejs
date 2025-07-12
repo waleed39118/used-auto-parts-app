@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<h2><%= part.title %></h2>
+
+<p><%= part.description %></p>
+
+<div class="row g-3">
+  <% part.photos.forEach(photo => { %>
+    <div class="col-md-4">
+      <img src="<%= photo %>" alt="<%= part.title %>" class="img-fluid rounded shadow-sm" />
+    </div>
+  <% }) %>
+</div>
+
+<% if(part.owner) { %>
+  <p class="mt-3"><small>Posted by: <%= part.owner.username %> | Contact: <%= part.owner.phone || 'N/A' %></small></p>
+<% } %>
+
+<a href="/spareparts" class="btn btn-secondary mt-3">Back to Spare Parts</a>
+
+<%- include('../partials/footer') %>

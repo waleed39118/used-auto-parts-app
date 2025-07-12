@@ -1,0 +1,47 @@
+<%- include('../partials/header') %>
+
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Available Spare Parts</h1>
+
+    <% if (success && success.length) { %>
+      <div class="alert alert-success">
+        <%= success %>
+      </div>
+      <% } %>
+        <% if (error && error.length) { %>
+          <div class="alert alert-danger">
+            <%= error %>
+          </div>
+          <% } %>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <% parts.forEach(part=> { %>
+                <div class="col">
+                  <div class="card h-100 shadow-sm border-0">
+                    <% if (part.photos && part.photos.length> 0) { %>
+                      <img src="/uploads/<%= part.photos[0] %>" class="card-img-top" alt="<%= part.name %>">
+                      <% } else { %>
+                        <img src="/images/placeholder.png" class="card-img-top" alt="No photo available">
+                        <% } %>
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <%= part.name %>
+                            </h5>
+                            <p class="card-text">
+                              <%= part.description %>
+                            </p>
+                            <p class="card-text"><strong>Price:</strong> $<%= part.price %>
+                            </p>
+                            <% if (part.user && part.user.phone) { %>
+                              <p class="card-text"><strong>Contact:</strong>
+                                <%= part.user.phone %>
+                              </p>
+                              <% } %>
+                          </div>
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+  </div>
+
+  <%- include('../partials/footer') %>

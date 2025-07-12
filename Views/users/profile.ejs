@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<h1 class="text-2xl font-bold mb-4 text-center"><%= user.username %>'s Listings</h1>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <% spareParts.forEach(part => { %>
+    <div class="bg-white p-4 rounded shadow">
+      <% if (part.imageUrl) { %>
+        <img src="<%= part.imageUrl %>" class="w-full h-48 object-cover mb-2 rounded">
+      <% } %>
+      <h2 class="text-xl font-semibold"><%= part.name %></h2>
+      <p class="text-gray-600">Price: <%= part.price %> BHD</p>
+      <a href="/spareparts/<%= part._id %>" class="text-blue-600 underline">View</a>
+    </div>
+  <% }) %>
+</div>
+<%- include('../partials/footer') %>

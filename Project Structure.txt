@@ -1,0 +1,47 @@
+used-auto-parts-app/
+│
+├── models/
+│   ├── User.js
+│   ├── CarModel.js
+│   ├── CarType.js
+│   ├── Location.js
+│   └── SparePart.js
+│
+├── routes/
+│   ├── auth.js
+│   ├── spareparts.js
+│   ├── users.js
+│   └── admin.js
+│
+├── middleware/
+│   ├── auth.js
+│   ├── admin.js
+│   └── flashMessages.js
+│
+├── public/
+│   └── uploads/    # multer saves images here
+│
+├── views/
+│   ├── partials/
+│   │   ├── header.ejs
+│   │   ├── footer.ejs
+│   │   └── flashMessages.ejs
+│   ├── index.ejs
+│   ├── 404.ejs
+│   ├── login.ejs
+│   ├── register.ejs
+│   ├── /spareparts/
+│   │   ├── index.ejs
+│   │   ├── new.ejs
+│   │   ├── show.ejs
+│   │   ├── edit.ejs
+│   ├── /users/
+│   │   ├── list.ejs
+│   │   └── profile.ejs
+│   └── /admin/
+│       └── dashboard.ejs
+│
+├── server.js
+├── seed.js
+├── package.json
+└── .gitignore

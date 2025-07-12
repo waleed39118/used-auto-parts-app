@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<h1 class="text-2xl font-bold mb-6 text-center">Admin Dashboard</h1>
+<h2 class="text-xl font-semibold mb-2">All Users</h2>
+<ul class="mb-8">
+  <% users.forEach(u => { %>
+    <li><%= u.username %> (<%= u.phone || 'No phone' %>)</li>
+  <% }) %>
+</ul>
+
+<h2 class="text-xl font-semibold mb-2">All Listings</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <% spareParts.forEach(part => { %>
+    <div class="bg-white p-4 rounded shadow">
+      <h3 class="font-bold"><%= part.name %></h3>
+      <p>By: <%= part.owner.username %></p>
+      <p>Price: <%= part.price %> BHD</p>
+    </div>
+  <% }) %>
+</div>
+<%- include('../partials/footer') %>

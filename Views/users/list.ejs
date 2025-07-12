@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+<h1 class="text-2xl font-bold mb-4 text-center">Users</h1>
+<ul class="max-w-md mx-auto">
+  <% users.forEach(u => { %>
+    <li class="mb-2 border p-2 rounded bg-white">
+      <a href="/users/<%= u._id %>" class="text-blue-600 underline"><%= u.username %></a>
+    </li>
+  <% }) %>
+</ul>
+<%- include('../partials/footer') %>

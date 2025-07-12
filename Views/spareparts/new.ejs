@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<h2>Add New Spare Part</h2>
+
+<form action="/spareparts" method="POST" enctype="multipart/form-data" class="mt-3">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title *</label>
+    <input type="text" id="title" name="title" class="form-control" required />
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" name="description" class="form-control"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="photos" class="form-label">Upload Photos (max 5)</label>
+    <input type="file" id="photos" name="photos" multiple class="form-control" accept="image/*" />
+  </div>
+  <button type="submit" class="btn btn-success">Add Spare Part</button>
+</form>
+
+<%- include('../partials/footer') %>
